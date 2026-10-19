@@ -166,7 +166,6 @@ function TrustMetrics() {
             </div>
           ))}
         </div>
-        <p className="data-note">Indicadores institucionais divulgados pela empresa, sujeitos à confirmação.</p>
       </div>
     </section>
   );
@@ -312,7 +311,6 @@ function Healthcare() {
           <WhatsAppLink message="Olá! Gostaria de falar sobre as soluções de impressão para o setor hospitalar.">
             Falar sobre soluções hospitalares <ArrowRight size={17} />
           </WhatsAppLink>
-          <small>* Indicador institucional sujeito à confirmação.</small>
         </div>
         <div className="medical-visual reveal">
           <div className="medical-printer"><Printer /><div className="scan-sheet"><span /><i /></div></div>
