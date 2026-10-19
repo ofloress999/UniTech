@@ -21,6 +21,7 @@ import {
   Zap,
 } from 'lucide-react';
 import { faqs, metrics, solutions } from './data';
+import unitechSymbol from './assets/unitech-symbol.png';
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -31,7 +32,7 @@ const TEAM_PHOTO =
 function Logo({ light = false }: { light?: boolean }) {
   return (
     <a className={`logo ${light ? 'logo--light' : ''}`} href="#inicio" aria-label="UniTech — início">
-      <img src="/assets/unitech-symbol.png" alt="" width="48" height="48" />
+      <img src={unitechSymbol} alt="" width="48" height="48" />
       <span>Uni<strong>Tech</strong></span>
     </a>
   );
@@ -104,7 +105,7 @@ function DeviceComposition({ variant = 'hero' }: { variant?: string }) {
       <div className="device-orbit orbit-b" />
       <div className="device device--laptop">
         <div className="laptop-screen">
-          <div className="screen-logo"><img src="/assets/unitech-symbol.png" alt="" /></div>
+          <div className="screen-logo"><img src={unitechSymbol} alt="" /></div>
           <span>Operação conectada</span>
         </div>
         <div className="laptop-base" />
