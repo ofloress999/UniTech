@@ -32,7 +32,7 @@ function Logo({ light = false }: { light?: boolean }) {
   return (
     <a className={`logo ${light ? 'logo--light' : ''}`} href="#inicio" aria-label="UniTech — início">
       <img src="/assets/unitech-symbol.png" alt="" width="48" height="48" />
-      <span>uni<strong>tech</strong></span>
+      <span>Uni<strong>Tech</strong></span>
     </a>
   );
 }
@@ -259,10 +259,10 @@ function HowItWorks() {
     <section className="process-section section-light" id="como-funciona">
       <div className="container">
         <div className="center-heading reveal"><span className="kicker">Da estratégia ao suporte</span><h2>Tecnologia sob medida.<br />Do planejamento ao suporte.</h2></div>
-        <div className="process-line"><span /></div>
         <div className="process-grid">
+          <div className="process-line" aria-hidden="true"><span /></div>
           {steps.map(([number, title, text]) => (
-            <article className="process-step reveal" key={number}>
+            <article className="process-step" key={number}>
               <strong>{number}</strong><i /><h3>{title}</h3><p>{text}</p>
             </article>
           ))}
@@ -470,8 +470,14 @@ export default function App() {
     });
 
     gsap.fromTo('.process-line span', { scaleX: 0 }, {
-      scaleX: 1, ease: 'none', transformOrigin: 'left center',
-      scrollTrigger: { trigger: '.process-grid', start: 'top 80%', end: 'bottom 65%', scrub: 1 },
+      scaleX: 1, ease: 'none',
+      scrollTrigger: {
+        trigger: '.process-line',
+        start: 'top 75%',
+        end: 'top 25%',
+        scrub: true,
+        invalidateOnRefresh: true,
+      },
     });
     gsap.to('.team-photo img', {
       yPercent: 8, ease: 'none',
@@ -481,3 +487,4 @@ export default function App() {
 
   return <div ref={root}><Header /><main><Hero /><TrustMetrics /><ValueProposition /><SolutionsShowcase /><HowItWorks /><Differentials /><Healthcare /><Brands /><About /><FAQ /><ContactCTA /></main><Footer /></div>;
 }
+
